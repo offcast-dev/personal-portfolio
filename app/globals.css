@@ -1,19 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --foreground-hex: #FCFCFC;
-  --background-start-hex: #202D3A;
-  --background-end-hex: #131B23;
+@theme {
+  --color-white-light: #FFFFFF;
+  --color-white: #FCFCFC;
+  --color-white-dark: #DADADA;
+  --color-grey: #979797;
+  --color-primary: #94FBAB;
+  --color-primary-dark: #75B082;
+  --color-brand-light: #202D3A;
+  --color-brand-dark: #131B23;
+  
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops));
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-hex: #FCFCFC;
-    --background-start-hex: #202D3A;
-    --background-end-hex: #131B23;
-  }
+:root {
+  --scrollbar-color: rgba(255, 255, 255, 0.5);
+  --scrollbar-color-track: rgba(255, 255, 255, 0.05);
+  --scrollbar-color-thumb: rgba(255, 255, 255, 0.25);
 }
 
 html {
@@ -21,18 +25,18 @@ html {
 }
 
 body {
-  color: var(--foreground-hex);
+  color: var(--color-white);;
   background: linear-gradient(
       to bottom left,
       transparent,
-      var(--background-end-hex)
+      var(--color-brand-dark)
     )
-    var(--background-start-hex);
+    var(--color-brand-light);
   background-attachment: fixed;
 }
 
 :focus {
-  outline: 2px dashed #94FBAB;
+  outline: 2px dashed var(--color-primary);
   outline-offset: 3px;
 }
 
@@ -42,12 +46,12 @@ body {
 }
 
 :focus-visible {
-  outline: 2px dashed #94FBAB;
+  outline: 2px dashed var(--color-primary);
   outline-offset: 3px;
 }
 
 * {
-  scrollbar-color: rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0.05);
+  scrollbar-color: var(--scrollbar-color) var(--scrollbar-color-track);
 }
 
 *::-webkit-scrollbar {
@@ -56,13 +60,13 @@ body {
 }
 
 *::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--scrollbar-color-track);
   border-radius: 20px;
   margin: 4px 0px;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: var(--scrollbar-color-thumb);
   border-radius: 3px;
   border: none;
 }
