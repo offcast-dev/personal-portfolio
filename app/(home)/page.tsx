@@ -17,12 +17,12 @@ export default function Home() {
           alt="seva-photo"
           priority={true}
           fill
-          className="absolute hidden object-cover object-left lg:block xl:object-contain xl:object-right"
+          className="absolute hidden object-cover object-left lg:block lg:object-contain lg:object-right"
         />
         <Avatar
           src="/seva-avatar-large.webp"
           alt="seva-avatar"
-          className="mx-auto w-[min(80vw,40vh)] lg:hidden"
+          className="mx-auto mt-12 w-[min(80vw,40vh)] lg:hidden"
         />
         <Greeting />
       </section>
