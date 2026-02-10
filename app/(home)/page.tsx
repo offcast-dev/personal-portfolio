@@ -92,7 +92,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section id="contact" className="max-w-xl items-center justify-center">
+      <Section id="contact" className="max-w-xl items-center justify-center scroll-m-18!">
         <div className="flex flex-col flex-wrap items-center gap-16 md:flex-row md:gap-8">
           <Avatar
             src="/seva-avatar-small.webp"

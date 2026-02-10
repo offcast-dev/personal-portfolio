@@ -5,6 +5,7 @@ import { NavigationLink, type NavigationLinkProps } from "./NavigationLink";
 import { Icon } from "./Icon";
 import { Dialog, DialogPanel, TransitionChild } from "@headlessui/react";
 import Link from "next/link";
+import { useAnchorTag } from "@/hooks/useAnchorTag";
 
 export type NavigationProps = ComponentPropsWithoutRef<"div"> & {
   links: NavigationLinkProps[];
@@ -12,12 +13,18 @@ export type NavigationProps = ComponentPropsWithoutRef<"div"> & {
 
 export function Navigation({ links, ...props }: NavigationProps) {
   let [isOpen, setIsOpen] = useState(false);
+  const [anchorTag, setAnchorTag] = useAnchorTag();
 
   return (
     <div {...props}>
       <div className="hidden gap-4 sm:gap-8 md:flex">
         {links.map((link) => (
-          <NavigationLink key={link.href.toString()} {...link} />
+          <NavigationLink
+            key={link.href.toString()}
+            active={!!anchorTag && link.href.toString().includes(anchorTag)}
+            onClick={() => setAnchorTag(link.href.toString().split("#")[1])}
+            {...link}
+          />
         ))}
       </div>
       <div className="md:hidden">
