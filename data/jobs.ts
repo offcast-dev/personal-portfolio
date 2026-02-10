@@ -1,6 +1,6 @@
 import { Tabs } from "@/components/Tabs";
 
-const jobs: Tabs[] = [
+export const jobs: Tabs[] = [
   {
     placeOfWork: "Stendahls",
     position: "Front-end Developer",
@@ -51,5 +51,3 @@ const jobs: Tabs[] = [
     href: "https://hoptech.se/",
   },
 ];
-
-export default jobs;

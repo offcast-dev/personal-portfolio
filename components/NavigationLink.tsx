@@ -5,18 +5,18 @@ export type NavigationLinkProps = LinkProps & {
   active?: boolean;
 };
 
-const NavigationLink = ({
+export function NavigationLink({
   href,
   active,
   label,
   ...props
-}: NavigationLinkProps) => {
+}: NavigationLinkProps) {
   return (
     <Link
       href={href}
       className={`relative px-1 py-0.5 capitalize transition-all duration-200 
         after:absolute after:bottom-0 after:left-0 
-        after:h-[1px] after:w-full  
+        after:h-px after:w-full  
         after:transition-all after:duration-200 
         hover:after:scale-100 ${
           active
@@ -29,5 +29,3 @@ const NavigationLink = ({
     </Link>
   );
 };
-
-export default NavigationLink;

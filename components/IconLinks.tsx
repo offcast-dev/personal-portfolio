@@ -1,4 +1,4 @@
-import IconLink, { IconLinkProps } from "./IconLink";
+import { IconLink, type IconLinkProps } from "./IconLink";
 import { ComponentPropsWithoutRef } from "react";
 
 export type IconLinksProps = ComponentPropsWithoutRef<"div"> & {
@@ -6,7 +6,7 @@ export type IconLinksProps = ComponentPropsWithoutRef<"div"> & {
   size?: number,
 };
 
-const IconLinks = ({ links, size, ...props }: IconLinksProps) => {
+export function IconLinks({ links, size, ...props }: IconLinksProps) {
   return (
     <div className="flex gap-8" {...props}>
       {links.map((link) => (
@@ -15,5 +15,3 @@ const IconLinks = ({ links, size, ...props }: IconLinksProps) => {
     </div>
   );
 };
-
-export default IconLinks;

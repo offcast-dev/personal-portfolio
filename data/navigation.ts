@@ -1,6 +1,6 @@
 import { NavigationLinkProps } from "@/components/NavigationLink";
 
-const navigation: NavigationLinkProps[] = [
+export const navigation: NavigationLinkProps[] = [
   {
     label: "projects",
     href: "/#projects",
@@ -18,5 +18,3 @@ const navigation: NavigationLinkProps[] = [
     href: "/#contact",
   },
 ];
-
-export default navigation;

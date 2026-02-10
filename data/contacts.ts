@@ -1,6 +1,6 @@
 import { IconLinkProps } from "@/components/IconLink";
 
-const contacts: IconLinkProps[] = [
+export const contacts: IconLinkProps[] = [
   {
     name: "email",
     href: "mailto:vsevolod.deriushkin@gmail.com",
@@ -14,5 +14,3 @@ const contacts: IconLinkProps[] = [
     href: "https://github.com/SevaDer14",
   },
 ];
-
-export default contacts;

@@ -1,5 +1,5 @@
 import { montserrat } from "@/app/fonts";
-import Icon from "@/components/Icon";
+import { Icon } from "@/components";
 import Link from "next/link";
 
 export default function NotFound() {

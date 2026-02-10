@@ -1,23 +1,15 @@
 import { montserrat } from "@/app/fonts";
 import Link from "next/link";
-import { ComponentPropsWithoutRef, FC } from "react";
-import Icon from "@/components/Icon";
+import { ComponentPropsWithoutRef } from "react";
 import Image from "next/image";
+import { Icon } from "@/components";
+import { Project } from "@/lib";
 
-export type Project = {
-  name: string;
-  href: string;
-  image: string;
-  description: string;
-  tech: string[];
-  links?: { label: string; href: string }[];
-};
-
-export type GalleryProps = ComponentPropsWithoutRef<"div"> & {
+export type ProjectsProps = ComponentPropsWithoutRef<"div"> & {
   projects: Project[];
 };
 
-const Gallery: FC<GalleryProps> = ({ projects, ...props }) => {
+export function Projects({ projects, ...props }: ProjectsProps) {
   return (
     <div {...props}>
       <div className="flex flex-col gap-32 lg:gap-64">
@@ -29,7 +21,7 @@ const Gallery: FC<GalleryProps> = ({ projects, ...props }) => {
             <Link
               href={project.href}
               target="_blank"
-              className="relative mt-8 block aspect-[4/3] basis-1/2 border-[3px] border-grey transition-colors hover:border-primary xl:mt-0"
+              className="relative mt-8 block aspect-4/3 basis-1/2 border-[3px] border-grey transition-colors hover:border-primary xl:mt-0"
             >
               <Image
                 priority={true}
@@ -86,5 +78,3 @@ const Gallery: FC<GalleryProps> = ({ projects, ...props }) => {
     </div>
   );
 };
-
-export default Gallery;

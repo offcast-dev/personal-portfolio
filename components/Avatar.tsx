@@ -2,7 +2,7 @@ import Image, { ImageProps } from "next/image";
 
 export type AvatarProps = ImageProps & { size?: number };
 
-const Avatar = ({ className, size, alt, ...props }: AvatarProps) => {
+export function Avatar({ className, size, alt, ...props }: AvatarProps) {
   return (
     <div className={`relative aspect-square ${className} `}>
       <Image
@@ -15,5 +15,3 @@ const Avatar = ({ className, size, alt, ...props }: AvatarProps) => {
     </div>
   );
 };
-
-export default Avatar;

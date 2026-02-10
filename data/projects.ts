@@ -1,6 +1,6 @@
-import { Project } from "@/components/Projects";
+import { Project } from "@/lib";
 
-const projects: Project[] = [
+export const projects: Project[] = [
   {
     image: "/volvo-penta.webp",
     name: "Volvo Penta",
@@ -39,5 +39,3 @@ const projects: Project[] = [
     ],
   },
 ];
-
-export default projects;

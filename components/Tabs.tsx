@@ -3,7 +3,7 @@
 import { montserrat } from "@/app/fonts";
 import Link from "next/link";
 import { ComponentPropsWithoutRef, FC, Fragment, useState } from "react";
-import { Tab, Transition } from "@headlessui/react";
+import { Tab, TabGroup, TabList, TabPanel, TabPanels, Transition } from "@headlessui/react";
 
 export type Tabs = {
   placeOfWork: string;
@@ -18,52 +18,35 @@ export type TabsProps = ComponentPropsWithoutRef<"div"> & {
   tabs: Tabs[];
 };
 
-const Tabs: FC<TabsProps> = ({ tabs, ...props }) => {
+export function Tabs({ tabs, ...props }: TabsProps) {
   const [selectedIndex, setSelectedIndex] = useState(0)
 
   return (
     <div {...props}>
-      <Tab.Group vertical as={Fragment} selectedIndex={selectedIndex} onChange={setSelectedIndex}>
-        {() => (
-          <div className="flex min-h-[400px] flex-col gap-8 md:flex-row">
-            <Tab.List>
-              {() => (
-                <div className="flex md:flex-col">
-                  {tabs.map((tab) => (
-                    <Tab key={tab.placeOfWork} as={Fragment}>
-                      {({ selected }) => (
-                        <button
-                          className={`
-                        ${
-                          selected
-                            ? "border-primary text-primary max-md:border-b-4 md:border-r-4"
-                            : "border-grey text-grey hover:border-white hover:text-white max-md:border-b-[1px] md:border-r-[1px]"
-                        }
-                        whitespace-nowrap bg-transparent px-4 py-2 focus:bg-primary focus:bg-opacity-5 focus:outline-none md:w-full
-                      `}
-                        >
-                          {tab.placeOfWork}
-                        </button>
-                      )}
-                    </Tab>
-                  ))}
-                </div>
-              )}
-            </Tab.List>
-            <Tab.Panels>
-              {tabs.map((tab, panelIndex) => (
-                <Transition
-                  key={`${tab.placeOfWork}-panel`}
-                  unmount={false}
-                  show={selectedIndex === panelIndex}
-                  enter="ease-out duration-300"
-                  enterFrom="opacity-0 -translate-x-5"
-                  enterTo="opacity-100 translate-x-0"
-                  leave="ease-in duration-300"
-                  leaveFrom="opacity-100 translate-x-0"
-                  leaveTo="opacity-0 translate-x-5"
-                >
-                  <Tab.Panel>
+      <TabGroup vertical as={Fragment} selectedIndex={selectedIndex} onChange={setSelectedIndex}>
+        <div className="flex min-h-[400px] flex-col gap-8 md:flex-row">
+          <TabList>
+            <div className="flex md:flex-col">
+              {tabs.map((tab) => (
+                <Tab key={tab.placeOfWork} as={Fragment}>
+                  <button
+                    className="whitespace-nowrap bg-transparent px-4 py-2 focus:bg-primary focus:bg-opacity-5 focus:outline-none md:w-full border-grey text-grey hover:border-white hover:text-white max-md:border-b-[1px] md:border-r-[1px] data-[selected]:border-primary data-[selected]:text-primary data-[selected]:max-md:border-b-4 data-[selected]:md:border-r-4"
+                  >
+                    {tab.placeOfWork}
+                  </button>
+                </Tab>
+              ))}
+            </div>
+          </TabList>
+          <TabPanels>
+            {tabs.map((tab, panelIndex) => (
+              <Transition
+                key={`${tab.placeOfWork}-panel`}
+                unmount={false}
+                show={selectedIndex === panelIndex}
+              >
+                <TabPanel>
+                  <div className="transition ease-out duration-300 opacity-100 translate-x-0 data-closed:opacity-0 data-closed:-translate-x-5">
                     <h3 className={`${montserrat.className} -ml-0.5 text-4xl`}>
                       {tab.position}{" "}
                       <Link
@@ -87,15 +70,13 @@ const Tabs: FC<TabsProps> = ({ tabs, ...props }) => {
                         </li>
                       ))}
                     </ul>
-                  </Tab.Panel>
-                </Transition>
-              ))}
-            </Tab.Panels>
-          </div>
-        )}
-      </Tab.Group>
+                  </div>
+                </TabPanel>
+              </Transition>
+            ))}
+          </TabPanels>
+        </div>
+      </TabGroup>
     </div>
   );
 };
-
-export default Tabs;

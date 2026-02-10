@@ -11,7 +11,7 @@ export type IconName =
 
 export type IconProps = ComponentPropsWithoutRef<"svg"> & { name: IconName };
 
-const Icon = ({ name, width = 24, height = 24, ...props }: IconProps) => {
+export function Icon({ name, width = 24, height = 24, ...props }: IconProps) {
   switch (name) {
     case "email":
       return (
@@ -139,5 +139,3 @@ const Icon = ({ name, width = 24, height = 24, ...props }: IconProps) => {
       return null;
   }
 };
-
-export default Icon;

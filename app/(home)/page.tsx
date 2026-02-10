@@ -1,15 +1,9 @@
 import { montserrat } from "@/app/fonts";
-import Avatar from "@/components/Avatar";
-import IconLinks from "@/components/IconLinks";
-import Projects from "@/components/Projects";
-import Tabs from "@/components/Tabs";
-import contacts from "@/data/contacts";
-import projects from "@/data/projects";
-import jobs from "@/data/jobs";
+import { Avatar, Section, Tabs, IconLinks } from "@/components";
+import { contacts, jobs, projects } from "@/data";
 import Image from "next/image";
-import Section from "@/components/Section";
-import Greeting from "@/components/Greeting";
-
+import { Greeting } from "./components/Greeting";
+import { Projects } from "./components/Projects";
 
 export default function Home() {
   return (
@@ -92,7 +86,7 @@ export default function Home() {
               alt="seva-photo"
               priority={true}
               fill
-              className="border-4 border-primary object-cover object-top shadow-[10px_10px_0_0_#94FBAB66]"
+              className="border-4 border-primary object-cover object-top shadow-[10px_10px_0_0_var(--color-primary-dark)]"
             />
           </div>
         </div>
@@ -106,7 +100,7 @@ export default function Home() {
             className="w-48 grow-0"
           />
           <h2
-            className={`${montserrat.className} grow-1 my-auto text-center text-4xl font-light tracking-widest sm:text-5xl`}
+            className={`${montserrat.className} grow my-auto text-center text-4xl font-light tracking-widest sm:text-5xl`}
           >
             Get in touch
           </h2>

@@ -1,11 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import IconLinks from "@/components/IconLinks";
-import Navigation from "@/components/Navigation";
+import { IconLinks, Navigation, ButtonLink } from "@/components";
 import { fira_mono } from "@/app/fonts";
-import contacts from "@/data/contacts";
-import ButtonLink from "@/components/ButtonLink";
-import navigation from "@/data/navigation";
+import { contacts, navigation } from "@/data";
 
 export const metadata: Metadata = {
   title: "Seva Deriushkin",
@@ -22,8 +19,8 @@ export default function RootLayout({
       <body className={fira_mono.className}>
         <header
           className={`sticky top-0 z-10 flex h-24 w-full 
-        flex-row-reverse items-center justify-between border-b-[2px] border-[#a4b0bd] border-opacity-5 
-        bg-gradient-to-l from-brand-light to-[#1a242e] 
+        flex-row-reverse items-center justify-between border-b-2 border-[#a4b0bd] border-opacity-5 
+        bg-linear-to-l from-brand-light to-[#1a242e] 
         md:flex-row md:justify-center`}
         >
           <Navigation
@@ -34,8 +31,8 @@ export default function RootLayout({
         <main className="container mx-auto px-8">{children}</main>
         <footer
           className={`hidden md:flex fixed bottom-0 left-0 h-24 w-full
-        items-center justify-center border-t-[2px] 
-        border-[#a4b0bd] border-opacity-5 bg-gradient-to-l
+        items-center justify-center border-t-2 
+        border-[#a4b0bd] border-opacity-5 bg-linear-to-l
         from-[#1a252f] to-[#141c24]`}
         >
           <IconLinks links={contacts} size={24} />
