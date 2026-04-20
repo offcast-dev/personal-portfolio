@@ -22,8 +22,7 @@ const projectKindClasses: Record<
     aspect: "aspect-4/3",
     imageBasis: "xl:basis-1/2",
     contentBasis: "xl:basis-1/2",
-    imageFrame:
-      "border-[3px] border-grey transition-colors hover:border-primary",
+    imageFrame: "border-[3px] border-grey",
   },
   app: {
     aspect: "aspect-[8/16]",
@@ -48,9 +47,7 @@ function ProjectImage({
   className = "",
 }: ProjectImageProps) {
   return (
-    <Link
-      href={project.href}
-      target="_blank"
+    <div
       className={`relative block min-w-0 w-full xl:mt-0 ${kind.imageFrame} ${kind.aspect} ${imageBasisClass} ${className}`}
     >
       <Image
@@ -60,15 +57,7 @@ function ProjectImage({
         fill
         className="object-cover"
       />
-      <div className="absolute flex h-full w-full opacity-0 transition-opacity hover:opacity-100">
-        <div className="absolute h-full w-full bg-brand-dark opacity-100" />
-        <p
-          className={`${montserrat.className} z-10 m-auto text-2xl text-primary`}
-        >
-          {`visit ${project.href.substring(8)}`}
-        </p>
-      </div>
-    </Link>
+    </div>
   );
 }
 

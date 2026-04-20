@@ -27,8 +27,8 @@ export const jobs: Tabs[] = [
     href: "https://www.ionordics.com",
   },
   {
-    placeOfWork: "Freelance",
-    position: "Audio engineer / editor",
+    placeOfWork: "Self-employed",
+    position: "Freelance audio engineer / editor",
     period: "2020 – 2021",
     description:
       "Self-employed audio engineering and editing while shifting focus to software development and completing a full-stack development bootcamp.",
@@ -44,7 +44,6 @@ export const jobs: Tabs[] = [
           "Used the period to build foundations for a move into professional software development.",
       },
     ],
-    href: "https://www.sevaderiushkin.com",
   },
   {
     placeOfWork: "Russian Academy of Science",

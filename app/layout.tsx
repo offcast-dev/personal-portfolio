@@ -1,8 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { IconLinks, Navigation, ButtonLink } from "@/components";
+import { Navigation, ButtonLink } from "@/components";
 import { fira_mono } from "@/app/fonts";
-import { contacts, navigation } from "@/data";
+import { navigation } from "@/data";
 import { twMerge } from "tailwind-merge";
 
 export const metadata: Metadata = {
@@ -32,16 +32,6 @@ export default function RootLayout({
           <ButtonLink className="ml-8" href="/api/cv">Resume</ButtonLink>
         </header>
         <main className="container mx-auto px-8">{children}</main>
-        <footer
-          className={twMerge("hidden md:flex fixed bottom-0 left-0 h-24 w-full",
-            "items-center justify-center border-t-2",
-            "border-[#a4b0bd] border-opacity-5",
-            "bg-linear-to-l from-[#1a252f] to-[#141c24]",
-            "md:flex"
-          )}
-        >
-          <IconLinks links={contacts} size={24} />
-        </footer>
       </body>
     </html>
   );

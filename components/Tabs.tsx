@@ -11,7 +11,7 @@ export type Tabs = {
   period: string;
   description: string;
   responsibilities: { title: string; description: string }[];
-  href: string;
+  href?: string;
 };
 
 export type TabsProps = ComponentPropsWithoutRef<"div"> & {
@@ -30,7 +30,7 @@ export function Tabs({ tabs, ...props }: TabsProps) {
               {tabs.map((tab) => (
                 <Tab key={tab.placeOfWork} as={Fragment}>
                   <button
-                    className="whitespace-nowrap bg-transparent px-4 py-2 focus:outline-none focus-visible:bg-primary/10 md:w-full border-grey text-grey hover:border-white hover:text-white max-md:border-b md:border-r data-selected:border-primary data-selected:text-primary data-selected:max-md:border-b-4 data-selected:md:border-r-4"
+                    className="cursor-pointer whitespace-nowrap bg-transparent px-4 py-2 focus:outline-none focus-visible:bg-primary/10 md:w-full border-grey text-grey hover:border-white hover:text-white max-md:border-b md:border-r data-selected:border-primary data-selected:text-primary data-selected:max-md:border-b-4 data-selected:md:border-r-4"
                   >
                     {tab.placeOfWork}
                   </button>
@@ -48,12 +48,14 @@ export function Tabs({ tabs, ...props }: TabsProps) {
                 <TabPanel>
                   <div className="transition ease-out duration-300 opacity-100 translate-x-0 data-closed:opacity-0 data-closed:-translate-x-5">
                     <h3 className={`${montserrat.className} -ml-0.5 text-4xl`}>
-                      {tab.position}{" "}
-                      <Link
-                        href={tab.href}
-                        target="_blank"
-                        className="text-primary"
-                      >{` @${tab.placeOfWork}`}</Link>
+                      {tab.position}
+                      {tab.href ? (
+                        <Link
+                          href={tab.href}
+                          target="_blank"
+                          className="text-primary"
+                        >{` @${tab.placeOfWork}`}</Link>
+                      ) : null}
                     </h3>
                     <p className="mt-2 tracking-widest text-grey">
                       {tab.period}

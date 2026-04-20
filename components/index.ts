@@ -1,3 +1,4 @@
+export * from "./AppFooter";
 export * from "./Appear";
 export * from "./Section";
 export * from "./IconLinks";

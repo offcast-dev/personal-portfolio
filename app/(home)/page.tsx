@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <section
         id="hero"
-        className={`${montserrat.className} max-w-9xl relative mx-auto mb-[min(24rem,20vh)] flex min-h-[calc(100vh-192px)] scroll-m-[25vh] flex-col justify-center`}
+        className={`${montserrat.className} max-w-9xl relative mx-auto flex min-h-[calc(100vh-6rem)] scroll-m-[25vh] flex-col justify-center`}
       >
         <div
           className="pointer-events-none absolute inset-0 z-0 hidden lg:block"
@@ -39,13 +39,13 @@ export default function Home() {
         <Greeting />
       </section>
 
-      <Section id="projects" className="max-w-6xl min-h-[1800px]">
+      <Section id="projects" className="max-w-6xl min-h-[1800px] mt-32">
         <div className="my-auto w-full">
           <h2 className={`${montserrat.className} text-5xl font-bold`}>
             My Projects
           </h2>
 
-          <Projects projects={projects} className="mt-32" />
+          <Projects projects={projects} className="mt-16" />
         </div>
       </Section>
 
@@ -104,7 +104,10 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section id="contact" className="max-w-xl items-center justify-center scroll-m-18!">
+      <Section
+        id="contact"
+        className="max-w-xl items-center justify-center scroll-m-18! mb-16 md:mb-24"
+      >
         <div className="flex flex-col flex-wrap items-center gap-16 md:flex-row md:gap-8">
           <Avatar
             src="/seva-avatar-small.webp"
