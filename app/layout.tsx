@@ -7,7 +7,8 @@ import { twMerge } from "tailwind-merge";
 
 export const metadata: Metadata = {
   title: "Seva Deriushkin",
-  description: "Front-end developer",
+  description:
+    "Senior Frontend Developer in Gothenburg, Sweden (Remote). React, Next.js, React Native, enterprise UIs at global scale.",
 };
 
 export default function RootLayout({

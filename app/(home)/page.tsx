@@ -12,16 +12,28 @@ export default function Home() {
         id="hero"
         className={`${montserrat.className} max-w-9xl relative mx-auto mb-[min(24rem,20vh)] flex min-h-[calc(100vh-192px)] scroll-m-[25vh] flex-col justify-center`}
       >
-        <Image
-          src="/seva-main.webp"
-          alt="seva-photo"
-          priority={true}
-          fill
-          className="absolute hidden object-cover object-left lg:block lg:object-contain lg:object-right"
-        />
+        <div
+          className="pointer-events-none absolute inset-0 z-0 hidden lg:block"
+          style={{
+            maskImage: "linear-gradient(to top, transparent 0%, white 32%)",
+            WebkitMaskImage: "linear-gradient(to top, transparent 0%, white 32%)",
+            maskSize: "100% 100%",
+            maskRepeat: "no-repeat",
+            WebkitMaskSize: "100% 100%",
+            WebkitMaskRepeat: "no-repeat",
+          }}
+        >
+          <Image
+            src="/seva-main.webp"
+            alt="Seva Deriushkin"
+            priority={true}
+            fill
+            className="object-cover object-left lg:object-contain lg:object-right"
+          />
+        </div>
         <Avatar
           src="/seva-avatar-large.webp"
-          alt="seva-avatar"
+          alt="Seva Deriushkin"
           className="mx-auto mt-12 w-[min(80vw,40vh)] lg:hidden"
         />
         <Greeting />
@@ -37,7 +49,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section id="experience" className="max-w-[90ch] min-h-[850px]">
+      <Section id="experience" className="max-w-[90ch] min-h-[1100px]">
         <div className="my-auto gap-12">
           <h2 className={`${montserrat.className} text-5xl font-bold`}>
             Work experience
@@ -54,28 +66,28 @@ export default function Home() {
               About me
             </h2>
             <p className="mt-8 leading-loose">
-              Hi! I am Seva Deriushkin, an enthusiastic web developer crafting
-              great looking web apps with the exceptional user experience.
+              I&apos;m a senior frontend developer based in Gothenburg, building
+              web and mobile UIs with React, Next.js, and React Native. I focus
+              on delivering great user experience, performance and accessibility, 
+              while keeping the codebase clean and maintainable.
+              </p>
+              <p className="mt-8 leading-loose">
+              My focus is to keep the work environemnt productive, enjoyable and less 
+              stressful for everyone. I try to achive that by taking my responsibilities seriously so people can rely on me,
+              focusing on maintaining a good DX, communicating clearly and honestly even if it 
+              is not easy, and being self-driven and proactive with improvements and new ideas.
             </p>
+
             <p className="mt-8 leading-loose">
-              My journey into web development sprouted from the exciting world
-              of experimental physics. As captivating as it was, the dynamic
-              allure of web development pulled me in.
-            </p>
-            <p className="mt-8 leading-loose">
-              Today, I am fortunate to be part of one of the best agencies in
-              the industry, where I work as a front-end developer. Here, I bring
-              ideas to life, fashioning interactive, user-friendly web apps with
-              cutting-edge web technologies. Here&apos;s a glimpse into some of
-              the tech I&apos;ve been working with lately:
+              I started out in physics and research, then moved into a software 
+              development. Some of the tools I reach for most often:
             </p>
             <ul className="mt-8 list-disc columns-[220px] pl-4 text-primary">
               <li>TypeScript</li>
-              <li>Next.js 13 (React)</li>
-              <li>Vue 3</li>
-              <li>SvelteKit</li>
-              <li>Tailwind</li>
-              <li>Storybook</li>
+              <li>Next.js &amp; React</li>
+              <li>React Native</li>
+              <li>Tailwind CSS</li>
+              <li>Calude Code &amp; Cursor</li>
               <li>Figma</li>
               <li>Cypress</li>
             </ul>
@@ -83,7 +95,7 @@ export default function Home() {
           <div className="relative hidden basis-[45%] xl:block">
             <Image
               src="/about-me.webp"
-              alt="seva-photo"
+              alt="Seva Deriushkin"
               priority={true}
               fill
               className="border-4 border-primary object-cover object-top shadow-[10px_10px_0_0_var(--color-primary-dark)]"
@@ -96,7 +108,7 @@ export default function Home() {
         <div className="flex flex-col flex-wrap items-center gap-16 md:flex-row md:gap-8">
           <Avatar
             src="/seva-avatar-small.webp"
-            alt="seva-avatar"
+            alt="Seva Deriushkin"
             className="w-48 grow-0"
           />
           <h2

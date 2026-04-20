@@ -30,7 +30,7 @@ export function Tabs({ tabs, ...props }: TabsProps) {
               {tabs.map((tab) => (
                 <Tab key={tab.placeOfWork} as={Fragment}>
                   <button
-                    className="whitespace-nowrap bg-transparent px-4 py-2 focus:bg-primary focus:bg-opacity-5 focus:outline-none md:w-full border-grey text-grey hover:border-white hover:text-white max-md:border-b-[1px] md:border-r-[1px] data-[selected]:border-primary data-[selected]:text-primary data-[selected]:max-md:border-b-4 data-[selected]:md:border-r-4"
+                    className="whitespace-nowrap bg-transparent px-4 py-2 focus:outline-none focus-visible:bg-primary/10 md:w-full border-grey text-grey hover:border-white hover:text-white max-md:border-b md:border-r data-selected:border-primary data-selected:text-primary data-selected:max-md:border-b-4 data-selected:md:border-r-4"
                   >
                     {tab.placeOfWork}
                   </button>

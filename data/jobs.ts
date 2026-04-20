@@ -2,52 +2,63 @@ import { Tabs } from "@/components/Tabs";
 
 export const jobs: Tabs[] = [
   {
-    placeOfWork: "Stendahls",
-    position: "Front-end Developer",
-    period: "November 2021 - Current",
+    placeOfWork: "iO Nordics",
+    position: "Senior Frontend Developer",
+    period: "2021 – Present (Junior 2021 → Senior 2024)",
     description:
-      "As a Front-End Developer at Stendahls, I play a crucial role in shaping digital experiences for a diverse clientele, including industry giants like Volvo Group and Husqvarna Construction. My primary focus revolves around front-end development, where I harness the power of React and TypeScript to bring clients' visions to life.",
+      "Leading European digital agency (formerly Stendahls). Senior frontend delivery across Next.js, React Native, and large-scale enterprise UIs—collaborating in distributed teams, mentoring juniors, and sharing knowledge internally.",
     responsibilities: [
       {
-        title: "Delivering Production-Ready Code",
+        title: "Web & mobile delivery",
         description:
-          "I take satisfaction in consistently delivering high-quality production code that aims to meet and, whenever possible, surpass the expectations of our valued clients. Whether it involves developing new features or improving the existing ones, I aim for the highest code standards.",
+          "Owned and shipped large Next.js surfaces (multi-language, high-volume listings, strong performance, Cypress coverage) and led React Native products end-to-end with Expo, Azure DevOps, and store releases.",
       },
       {
-        title: "Collaborative Multidisciplinary Approach",
+        title: "Enterprise & platforms",
         description:
-          "Collaboration is at the heart of our agency's success, and I actively engage with designers, project managers, fellow developers, and clients to ensure seamless project execution.",
+          "Built component libraries, compliance-heavy portals, and real-time Node.js services. Did the design system and integration work for long-running client programs.",
       },
       {
-        title: "Leadership and Innovation",
+        title: "Collaboration & leadership",
         description:
-          " I am keen on taking on lead role, steering projects towards successful completion. I'm always eager to introduce improvements and fresh ideas, leveraging my expertise to keep our projects at the forefront of innovation.",
+          "Worked in distributed teams across Europe and beyond (Git, Scrum, Azure DevOps, async communication). Closely worked with clients, POs, UX, and backend. Mentored junior talents and ran company-wide knowledge sharing sessions.",
       },
     ],
-    href: "https://stendahls.se",
+    href: "https://www.ionordics.com",
   },
   {
-    placeOfWork: "Adaptive Labs",
-    position: "Full-stack Developer",
-    period: "July 2021 - November 2021",
-    description: `As a co-founder and full-stack developer at Adaptive Labs, I played a pivotal role in driving the technical aspects of our projects. My responsibilities spanned both front-end and back-end development, reflecting a comprehensive approach to delivering high-quality solutions to our clients.`,
+    placeOfWork: "Freelance",
+    position: "Audio engineer / editor",
+    period: "2020 – 2021",
+    description:
+      "Self-employed audio engineering and editing while shifting focus to software development and completing a full-stack development bootcamp.",
     responsibilities: [
       {
-        title: "Lead Role in Development",
+        title: "Client production work",
         description:
-          "I assumed lead responsibilities for both front-end and back-end development, ensuring that our projects were not only technically robust but also user-friendly and visually appealing. This dual expertise allowed us to provide end-to-end solutions to our clients.",
+          "Delivered engineering and editing services for varied productions, balancing quality and deadlines in a solo practice.",
       },
       {
-        title: "Client Collaboration",
+        title: "Career transition",
         description:
-          "Collaborating closely with clients was a fundamental part of my role. I actively participated in meetings to understand their needs, plan project scopes, and establish clear objectives. This direct engagement helped us align our technical solutions with our clients' business goals.",
-      },
-      {
-        title: "Backlog Management",
-        description:
-          "I took charge of forming project backlogs, defining tasks, priorities, and timelines. This organizational skill was essential in keeping our projects on track and meeting deadlines.",
+          "Used the period to build foundations for a move into professional software development.",
       },
     ],
-    href: "https://hoptech.se/",
+    href: "https://www.sevaderiushkin.com",
+  },
+  {
+    placeOfWork: "Russian Academy of Science",
+    position: "Researcher",
+    period: "2013 – 2020 (Engineer Researcher 2013 → Researcher 2016)",
+    description:
+      "Research on electrical properties of semimetals and semiconductors near absolute zero, building analytical and problem-solving depth for complex technical work.",
+    responsibilities: [
+      {
+        title: "Experimental research",
+        description:
+          "Ran experiments, wrote papers, and made conference talks in low-temperature condensed matter physics.",
+      },
+    ],
+    href: "https://www.ras.ru",
   },
 ];

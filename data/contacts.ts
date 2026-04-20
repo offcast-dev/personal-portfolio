@@ -3,14 +3,14 @@ import { IconLinkProps } from "@/components/IconLink";
 export const contacts: IconLinkProps[] = [
   {
     name: "email",
-    href: "mailto:vsevolod.deriushkin@gmail.com",
+    href: "mailto:seva@newtonality.net",
+  },
+  {
+    name: "github",
+    href: "https://github.com/offcast-dev",
   },
   {
     name: "telegram",
     href: "https://t.me/Sevader",
-  },
-  {
-    name: "github",
-    href: "https://github.com/SevaDer14",
   },
 ];
