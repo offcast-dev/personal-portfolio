@@ -57,7 +57,7 @@ export function Projects({ projects, ...props }: ProjectsProps) {
                   </span>
                 ))}
               </div>
-              <p className="mt-12 text-justify leading-loose tracking-wide">
+              <p className="mt-12 whitespace-pre-line text-justify leading-loose tracking-wide">
                 {project.description}
               </p>
               {project.links &&
